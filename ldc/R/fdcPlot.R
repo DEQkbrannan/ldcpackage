@@ -66,12 +66,15 @@ fdc.ss.est.flow.plot <- function(flow.exceed=NULL,
   plt.lty="solid"
   abline(v=c(10,40,60,90), col=plt.col, lwd=plt.ldw, lty=plt.lty)
   ## text for descriptions of flow zones
+
+  High     Flows	Medium-High Flows	Medium Flows	Medium-Low Flows	Low     Flows
+
   text( 5,y.lims[1]*1.0,"High Flows", adj=c(0.5,0))
-  text(25,y.lims[1]*1.0,"Transitional Flows", adj=c(0.5,0))
-  text(50,y.lims[1]*1.0,"Typical Flows", adj=c(0.5,0))
-  text(75,y.lims[1]*1.0,"Dry Flows", adj=c(0.5,0))
+  text(25,y.lims[1]*1.0,"Medium-High Flows", adj=c(0.5,0))
+  text(50,y.lims[1]*1.0,"Medium Flows", adj=c(0.5,0))
+  text(75,y.lims[1]*1.0,"Medium-Low Flows", adj=c(0.5,0))
   text(95,y.lims[1]*1.0,"Low Flows", adj=c(0.5,0))
-  ## plot Stream Stats Estmates with error bars
+  ## plot Stream Stats Estimates with error bars
   ## plot estimates
   points(ss.est$FDPercent*100,ss.est$FDEst,
          pch=19,cex=1.1)
