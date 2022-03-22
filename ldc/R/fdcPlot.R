@@ -66,9 +66,6 @@ fdc.ss.est.flow.plot <- function(flow.exceed=NULL,
   plt.lty="solid"
   abline(v=c(10,40,60,90), col=plt.col, lwd=plt.ldw, lty=plt.lty)
   ## text for descriptions of flow zones
-
-  High     Flows	Medium-High Flows	Medium Flows	Medium-Low Flows	Low     Flows
-
   text( 5,y.lims[1]*1.0,"High Flows", adj=c(0.5,0))
   text(25,y.lims[1]*1.0,"Medium-High Flows", adj=c(0.5,0))
   text(50,y.lims[1]*1.0,"Medium Flows", adj=c(0.5,0))
