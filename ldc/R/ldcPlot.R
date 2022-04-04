@@ -63,12 +63,17 @@ ldc.plot <- function(ldc.stn,
   plt.lty="solid"
   abline(v=c(10,40,60,90), col=plt.col, lwd=plt.ldw, lty=plt.lty)
   ## text for descriptions of flow zones
-  fz.lbls <- ldc.stn$geomns$desc
-  text( 5,y.lims[1]*1.0,fz.lbls[1], adj=c(0.5,0))
-  text(25,y.lims[1]*1.0,fz.lbls[2], adj=c(0.5,0))
-  text(50,y.lims[1]*1.0,fz.lbls[3], adj=c(0.5,0))
-  text(75,y.lims[1]*1.0,fz.lbls[4], adj=c(0.5,0))
-  text(95,y.lims[1]*1.0,fz.lbls[5], adj=c(0.5,0))
+  # fz.lbls <- ldc.stn$geomns$desc
+  # text( 5,y.lims[1]*1.0,fz.lbls[1], adj=c(0.5,0))
+  # text(25,y.lims[1]*1.0,fz.lbls[2], adj=c(0.5,0))
+  # text(50,y.lims[1]*1.0,fz.lbls[3], adj=c(0.5,0))
+  # text(75,y.lims[1]*1.0,fz.lbls[4], adj=c(0.5,0))
+  # text(95,y.lims[1]*1.0,fz.lbls[5], adj=c(0.5,0))
+  text( 5,y.lims[1]*1.0,"High Flows", adj=c(0.5,0))
+  text(25,y.lims[1]*1.0,"Medium-High Flows", adj=c(0.5,0))
+  text(50,y.lims[1]*1.0,"Medium Flows", adj=c(0.5,0))
+  text(75,y.lims[1]*1.0,"Medium-Low Flows", adj=c(0.5,0))
+  text(95,y.lims[1]*1.0,"Low Flows", adj=c(0.5,0))
   ## plot crit 406
   lines(ldc.crit$ldc.max$flow.exceed,ldc.crit$ldc.max$load.day,
         col=crt.col, lty=crt.lty, lwd=crt.lwd
