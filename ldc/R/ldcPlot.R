@@ -18,16 +18,24 @@
 ldc.plot <- function(ldc.stn,
                      ldc.crit,
                      plot.fn=NULL,
-                     y.lims=NULL) {
+                     y.lims=NULL,
+                     x.px=900,
+                     y.px=750,
+                     pt.size=17) {
 
   options(warn=-1)
 
   # Uncomment to add file path for plot to be saved in
   if(!is.null(plot.fn)) {
-    pdf(file=plot.fn,
-        width=11,heigh=8.5,onefile=FALSE,title="",
-        paper="special", bg="white")
+    png(file=plot.fn,
+        width=x.px,height=y.px, pointsize = pt.size,
+        bg="white")
   }
+  # if(!is.null(plot.fn)) {
+  #   pdf(file=plot.fn,
+  #       width=11,heigh=8.5,onefile=FALSE,title="",
+  #       paper="special", bg="white")
+  # }
 
   if(is.null(y.lims)) {
     min.y <- min(
@@ -169,7 +177,8 @@ ldc.plot <- function(ldc.stn,
            col=ldc.col.nd, pch=ldc.pch.nd, cex=ldc.cex.nd
     )
   }
-  if(names(dev.cur()) == "pdf") {
+  # if(names(dev.cur()) == "pdf") {
+  if(names(dev.cur()) == "png") {
     dev.off()
   }
   options(warn=0)
