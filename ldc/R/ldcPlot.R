@@ -17,17 +17,17 @@
 
 ldc.plot <- function(ldc.stn,
                      ldc.crit,
-                    # plot.fn=NULL,
+                     plot.fn=NULL,
                      y.lims=NULL) {
 
   options(warn=-1)
 
   # Uncomment to add file path for plot to be saved in
-  # if(!is.null(plot.fn)) {
-  #   pdf(file=plot.fn,
-  #       width=11,heigh=8.5,onefile=FALSE,title="",
-  #       paper="special", bg="white")
-  # }
+  if(!is.null(plot.fn)) {
+    pdf(file=plot.fn,
+        width=11,heigh=8.5,onefile=FALSE,title="",
+        paper="special", bg="white")
+  }
 
   if(is.null(y.lims)) {
     min.y <- min(
