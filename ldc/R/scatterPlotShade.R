@@ -4,7 +4,10 @@ scatter.bacteria.flow.ts.plot.with.shading <- function(ldc=NULL,
                                                        plot.fn=NULL,
                                                        x.lim.scatter=NULL,
                                                        y.lim.scatter.bacteria=NULL,
-                                                       y.lim.flow=NULL) {
+                                                       y.lim.flow=NULL,
+                                                       x.px=900,
+                                                       y.px=750,
+                                                       pt.size=17) {
 
   ## check for correct input
   if(is.null(ldc) | is.null(ldc.crit) | is.null(est.flow)) {
@@ -15,10 +18,9 @@ scatter.bacteria.flow.ts.plot.with.shading <- function(ldc=NULL,
   ## set output for plot
   ## if no filename, output sent to current device
   if(is.null(plot.fn ) != TRUE) {
-    pdf(file=plot.fn,
-        width=11,heigh=8.5,onefile=FALSE,title="",
-        paper="special", bg="white")
-  }
+    png(file=plot.fn,
+        width=x.px,height=y.px, pointsize = pt.size,
+        bg="white")  }
   ## set plot margins to accomodate the secondary
   ## y-axis
   par(mar=c(5, 4, 4, 4) + 0.1)
