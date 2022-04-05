@@ -15,15 +15,22 @@
 #'
 
 scatterBacteriaTSPlot <- function(ldc,
-                                          ldc.crit,
-                                          est.flow,
-                                          plot.fn=NULL) {
+                                  ldc.crit,
+                                  est.flow,
+                                  plot.fn=NULL,
+                                  x.px=900,
+                                  y.px=750,
+                                  pt.size=17) {
 
 
   #change if necessary
-  x.lim.scatter <- c("1991-01-01", "2014-12-31")
-  y.lim.flow <- c('1e-02', '1e+03')
-  y.lim.scatter.bacteria <- c(1, 10000)
+  x.lim.scatter <- NULL
+  y.lim.flow <- NULL
+  y.lim.scatter.bacteria <- NULL
+
+  # x.lim.scatter <- c("1991-01-01", "2014-12-31")
+  # y.lim.flow <- c('1e-02', '1e+03')
+  # y.lim.scatter.bacteria <- c(1, 10000)
 
    ## check for correct input
   if(is.null(ldc) | is.null(ldc.crit) | is.null(est.flow)) {
@@ -33,11 +40,16 @@ scatterBacteriaTSPlot <- function(ldc,
 
   ## set output for plot
   ## if no filename, output sent to current device
-  if(is.null(plot.fn ) != TRUE) {
-    pdf(file=plot.fn,
-        width=11,heigh=8.5,onefile=FALSE,title="",
-        paper="special", bg="white")
+  if(!is.null(plot.fn)) {
+    png(file=plot.fn,
+        width=x.px,height=y.px, pointsize = pt.size,
+        bg="white")
   }
+  # if(is.null(plot.fn ) != TRUE) {
+  #   pdf(file=plot.fn,
+  #       width=11,heigh=8.5,onefile=FALSE,title="",
+  #       paper="special", bg="white")
+  # }
   ## set plot margins to accomodate the secondary
   ## y-axis
   par(mar=c(5, 4, 4, 4) + 0.1)
